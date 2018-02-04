@@ -1,0 +1,54 @@
+<html>
+	<head>    
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   	<title>WebGL!</title> 
+      <script type = "text/javascript" src ="main.js"></script>
+      <script type = "text/javascript" src ="gl-matrix.js"></script>   
+   </head>
+   <body>
+      <input id="Uruchom" type="button" value="Uruchom" onclick="uruchomEvent();" />
+      <input id="Zamknij" type="button" value="Zamknij" onclick="zamknijEvent();" />
+      <br />
+      <label>Obiekty : </label>
+      <label><input id = "Triangle" type="checkbox">Triangle</label>
+      <label><input id = "Rotating_Triangle" type="checkbox">Rotating triangle</label>
+      <label><input id = "Rotating_Cube" type="checkbox" checked>Rotating Cube</label>
+      <br />
+      <label>Tekstury : </label>
+      <label><input id = "tex1" type="checkbox" checked>Box</label>
+      <label><input id = "tex2" type="checkbox" >Mario</label>
+      <label><input id = "tex3" type="checkbox" >Minecraft</label>
+      <img id="crate-image" src="crate.png" width = "0" height = "0"></img>
+      <img id="box-image" src="box.jpg" width = "0" height = "0"></img>
+      <img id="chest-image" src="chest.png" width = "0" height = "0"></img>
+   	<canvas id= "game-surface" width = "800" height="600">
+   		Your browser does not support HTML5
+   	</canvas>
+   </body>
+</html>
+
+<script type="text/javascript">
+
+   document.getElementById("Uruchom").onclick = uruchomEvent;
+  
+   function uruchomEvent(){
+      
+      if(Triangle.checked == true)
+         InvokeTriangle();
+      if(Rotating_Triangle.checked == true)
+         InvokeRotatingTriangle();
+      if(Rotating_Cube.checked == true)
+         InvokeRotatingCube();
+   }
+
+</script>
+
+<script type="text/javascript">
+
+   document.getElementById("Zamknij").onclick = zamknijEvent;
+
+   function zamknijEvent(){
+      self.close();
+   }
+
+</script>
